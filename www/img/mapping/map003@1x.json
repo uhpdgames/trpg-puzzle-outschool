@@ -1,0 +1,20 @@
+{"frames": {
+
+"nenBG.png":
+{
+	"frame": {"x":1,"y":1,"w":1680,"h":1512},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":24,"w":1680,"h":1512},
+	"sourceSize": {"w":1680,"h":1536}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "map003@1x.pvr",
+	"format": "ETC1_RGB",
+	"size": {"w":2048,"h":2048},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:e3fcedb82c6a41f5f7af5ff8bcf9ccfe:75e3b089ea69a0e7eb60490ca0a281af:7e714089446b1ec436bfcde000c5071d$"
+}
+}

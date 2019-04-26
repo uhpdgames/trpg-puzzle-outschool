@@ -1,0 +1,92 @@
+{"frames": {
+
+"ban_maytinh.png":
+{
+	"frame": {"x":113,"y":1,"w":150,"h":98},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":150,"h":98},
+	"sourceSize": {"w":150,"h":98}
+},
+"Calendar.png":
+{
+	"frame": {"x":34,"y":1,"w":40,"h":41},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":40,"h":41},
+	"sourceSize": {"w":40,"h":41}
+},
+"ground_wall.png":
+{
+	"frame": {"x":147,"y":147,"w":816,"h":624},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":816,"h":624},
+	"sourceSize": {"w":816,"h":624}
+},
+"guong_doi.png":
+{
+	"frame": {"x":1,"y":147,"w":144,"h":165},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":144,"h":165},
+	"sourceSize": {"w":144,"h":165}
+},
+"Nen_Tham_1.png":
+{
+	"frame": {"x":483,"y":1,"w":96,"h":144},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":96,"h":144},
+	"sourceSize": {"w":96,"h":144}
+},
+"Nen_Tham_4.png":
+{
+	"frame": {"x":581,"y":1,"w":192,"h":144},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":192,"h":144},
+	"sourceSize": {"w":192,"h":144}
+},
+"Nen_Tham_5.png":
+{
+	"frame": {"x":775,"y":1,"w":192,"h":144},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":192,"h":144},
+	"sourceSize": {"w":192,"h":144}
+},
+"Paint G.png":
+{
+	"frame": {"x":76,"y":1,"w":35,"h":43},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":35,"h":43},
+	"sourceSize": {"w":35,"h":43}
+},
+"Painting E.png":
+{
+	"frame": {"x":1,"y":1,"w":31,"h":34},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":31,"h":34},
+	"sourceSize": {"w":31,"h":34}
+},
+"tu.png":
+{
+	"frame": {"x":265,"y":1,"w":216,"h":141},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":216,"h":141},
+	"sourceSize": {"w":216,"h":141}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "ktx@1x.pvr",
+	"format": "ETC1_RGB",
+	"size": {"w":1024,"h":1024},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:f1b69ef93f20926d644d8322acc06c5d:1143c13fa1440b5035085f9ac9809f33:500961797945f1e5ca74ac1fc1c2f113$"
+}
+}
