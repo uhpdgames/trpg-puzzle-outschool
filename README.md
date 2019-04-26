@@ -1,0 +1,2 @@
+# trpg-puzzle-outschool
+data
