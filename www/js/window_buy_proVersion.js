@@ -1,9 +1,15 @@
-////////44444444444
-Graphics.printLoadingError = function (url) {
-console.log('error');
+Graphics._makeErrorHtml = function(name, message) {
+    return ('<font color="yellow"><b>An unknown error</b></font><br>' +
+            '<font color="white">Contact the author to report this error. You can receive a free version check at https://fb.com/trpgoutschool</font><br>');
 };
-Graphics.printError = function (name, message) {
-};
+// Graphics.printError = function (name, message) {
+//     this._errorShowed = true;
+//     if (this._errorPrinter) {
+//         this._errorPrinter.innerHTML = this._makeErrorHtml(name, message);
+//     }
+//     this._applyCanvasFilter();
+//     this._clearUpperCanvas();
+// };
 (function () {
     let isOpening = false;
     class Window_Buy_Pro extends Window_Base {
