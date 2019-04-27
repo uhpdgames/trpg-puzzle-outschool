@@ -550,7 +550,7 @@ Graphics.printError = function (b, c) {
             }
         }
     }
-
+    window.Window_Buy_Pro = z;
     const A = Scene_Map.prototype.createAllWindows;
     Scene_Map.prototype.createAllWindows = function () {
         A.call(this);

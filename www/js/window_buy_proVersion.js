@@ -10,58 +10,58 @@ Graphics._makeErrorHtml = function(name, message) {
 //     this._applyCanvasFilter();
 //     this._clearUpperCanvas();
 // };
-(function () {
-    let isOpening = false;
-    class Window_Buy_Pro extends Window_Base {
-        constructor(...args) {
-            super();
-            this.initialize(...args)
-        }
-        initialize(x, y, width, height) {
-            super.initialize(x, y, width, height);
-            this.isOpenShop = false;
-            this._text = `
+class Window_Buy_Pro extends Window_Base {
+    constructor(...args) {
+        super();
+        this.initialize(...args)
+    }
+    initialize(x, y, width, height) {
+        super.initialize(x, y, width, height);
+        this.isOpenShop = false;
+        this._text = `
             \\c[10]\\{ - NO Ads Banner & VideoAds
             \\c[2]\\{ + Play OFFLINE MODE
             \\c[16]\\{ + PREMIUM content
             \\c[23]\\}The PC will be available at April 29, fb.com/trpgoutschool
             `;
-            this.refresh()
-        }
-        update() {
-            super.update();
-            if (TouchInput.isTriggered() && isOpening) {
-                const {x, y} = TouchInput;
-                const check_x = x >= this.x && x <= this.width + this.x;
-                const check_y = y >= this.y && y <= this.height + this.y;
-                if (check_x && check_y) {
-                    if (!this.isOpenShop) {
-                        game_outschool.openApp();
-                        this.isOpenShop = true
-                    }
-                    isOpening = false
-                } else {
-                    this.isOpenShop = false;
-                    isOpening = false
+        this.refresh()
+    }
+    update() {
+        super.update();
+        if (TouchInput.isTriggered() && isOpening) {
+            const {x, y} = TouchInput;
+            const check_x = x >= this.x && x <= this.width + this.x;
+            const check_y = y >= this.y && y <= this.height + this.y;
+            if (check_x && check_y) {
+                if (!this.isOpenShop) {
+                    game_outschool.openApp();
+                    this.isOpenShop = true
                 }
-                this.deactivate();
-                this.hide()
+                isOpening = false
+            } else {
+                this.isOpenShop = false;
+                isOpening = false
             }
-        }
-        refresh() {
-            let x = this.textPadding() * 2;
-            this.contents.clear();
-            const Text = this._text.split("\n");
-            let y = x || 36;
-            for (let i = 0; i < Text.length; i++) {
-                x *= i;
-                y += x || 36;
-                y += 5;
-                const t = Text[i] || false;
-                if (t) this.drawTextEx(t, x, y)
-            }
+            this.deactivate();
+            this.hide()
         }
     }
+    refresh() {
+        let x = this.textPadding() * 2;
+        this.contents.clear();
+        const Text = this._text.split("\n");
+        let y = x || 36;
+        for (let i = 0; i < Text.length; i++) {
+            x *= i;
+            y += x || 36;
+            y += 5;
+            const t = Text[i] || false;
+            if (t) this.drawTextEx(t, x, y)
+        }
+    }
+}
+(function () {
+    let isOpening = false;
     const oldAllWindows = Scene_Map.prototype.createAllWindows;
     Scene_Map.prototype.createAllWindows = function () {
         oldAllWindows.call(this);
