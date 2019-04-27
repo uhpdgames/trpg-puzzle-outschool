@@ -5,6 +5,7 @@
 * Free for use in commercial or non-commercial projects.
 * Credits required to: Aloe Guvner */
 (function () {
+    QMovement.moveOnClick = true;
     let needShowButton = false;
     let Parameters = {
         "dPadSettings": {

@@ -237,6 +237,7 @@ Graphics.printError = function (b, c) {
     b.prototype.absDistance = function (a, b) {
         return Math.sqrt(Math.pow(a.x - b.x, 2) + Math.pow(a.y - b.y, 2))
     };
+    window.Sprite_Button = b;
     c.prototype = Object.create(b.prototype);
     c.prototype.constructor = c;
     c.prototype.initialize = function (a, e, c, d) {
