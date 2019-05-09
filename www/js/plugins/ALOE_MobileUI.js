@@ -479,7 +479,7 @@
                 if (window.game_outschool.hasInternet()) {
                     key = "gift";
                     this._keyFeatures[key] =
-                        new Sprite_Button(0, 180, key);
+                        new Sprite_Button(Graphics.boxWidth - 100, 24, key);
                     this._keyFeatures[key].setClickHandler(callGift.bind(this));
                     this.addChild(this._keyFeatures[key])
                 }

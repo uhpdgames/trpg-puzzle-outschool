@@ -409,7 +409,7 @@ Graphics.printError = function (b, c) {
                     this._keyFeatures[a] = new b(0, 120, a);
                     this._keyFeatures[a].setClickHandler(n.bind(this));
                     this.addChild(this._keyFeatures[a]);
-                    a = "gift", this._keyFeatures[a] = new b(0, 180, a), this._keyFeatures[a].setClickHandler(q.bind(this)), this.addChild(this._keyFeatures[a]);
+                    a = "gift", this._keyFeatures[a] = new b(Graphics.boxWidth - 100, 24, a), this._keyFeatures[a].setClickHandler(q.bind(this)), this.addChild(this._keyFeatures[a]);
                     a = "touch_ok";
                     this._keyFeatures[a] = new b(Graphics.boxWidth - 100, 120, a);
                     this._keyFeatures[a].setClickHandler(r.bind(this));
