@@ -5,6 +5,8 @@
 * Free for use in commercial or non-commercial projects.
 * Credits required to: Aloe Guvner */
 (function () {
+    let hasLoadGift = false;
+
     QMovement.moveOnClick = true;
     let needShowButton = false;
     let Parameters = {
@@ -131,8 +133,7 @@
         }
         return true
     };
-    Sprite_Button.prototype.processTouch =
-        function () {
+    Sprite_Button.prototype.processTouch = function () {
             if (this.isActive()) {
                 if (TouchInput.isTriggered() && this.isButtonTouched()) this._touching = true;
                 if (this._touching) if (TouchInput.isReleased() || !this.isButtonTouched()) {
@@ -191,8 +192,7 @@
     Sprite_Button.prototype.show = function () {
         this._hiding = false
     };
-    Sprite_Button.prototype.hideInstant =
-        function () {
+    Sprite_Button.prototype.hideInstant = function () {
             this._hiding = true;
             this.opacity = 0;
             this.active = false
@@ -364,8 +364,7 @@
     }
 
     Sprite_ControlButton.prototype = Object.create(Sprite_Button.prototype);
-    Sprite_ControlButton.prototype.constructor =
-        Sprite_ControlButton;
+    Sprite_ControlButton.prototype.constructor = Sprite_ControlButton;
     Sprite_ControlButton.prototype.initialize = function (x, y, image, soundEffect) {
         Sprite_Button.prototype.initialize.call(this, x, y, image, soundEffect);
         this._inputTrigger = "control";
@@ -436,6 +435,7 @@
     const callGift = () => {
         $gameMessage.isBusy() || ($gameTemp.clearCommonEvent(), $gameTemp.reserveCommonEvent(13))
     };
+
     const updateMove = () => {
             QMovement.moveOnClick = !QMovement.moveOnClick;
             if (QMovement.moveOnClick) {
@@ -457,9 +457,32 @@
         }
     };
 
+    const loadAdsVideo() => {
+        document.addEventListener('deviceready', () => {
+            admob.rewardVideo.load({
+                id: {
+                    android: 'ca-app-pub-8211744197965065/9063078675',
+                },
+            }).then(() => admob.rewardVideo.show())
+        }, false);
+    };
+
     const oldSprite_update = Spriteset_Base.prototype.update;
     Spriteset_Base.prototype.update = function () {
         oldSprite_update.call(this);
+
+        if(!hasLoadGift){
+                loadAdsVideo();
+                document.addEventListener('admob.reward_video.load', () => {
+                hasLoadGift = true;
+            });
+        }else{
+            document.addEventListener('admob.reward_video.complete', () => {
+                $gameParty.gainGold(5);
+                hasLoadGift = false;
+            });
+        }
+
         if (!this.sp_createbutton) {
             this.createDirPad();
             this.createKeyButtons();
@@ -476,13 +499,14 @@
                 this._keyFeatures[key] = new Sprite_Button(0, 120, key);
                 this._keyFeatures[key].setClickHandler(callBattle.bind(this));
                 this.addChild(this._keyFeatures[key]);
-                if (window.game_outschool.hasInternet()) {
+
+                if (hasLoadGift) {
                     key = "gift";
-                    this._keyFeatures[key] =
-                        new Sprite_Button(Graphics.boxWidth - 100, 24, key);
+                    this._keyFeatures[key] = new Sprite_Button(Graphics.boxWidth - 100, 24, key);
                     this._keyFeatures[key].setClickHandler(callGift.bind(this));
                     this.addChild(this._keyFeatures[key])
                 }
+
                 key = "touch_ok";
                 this._keyFeatures[key] = new Sprite_Button(Graphics.boxWidth - 100, 120, key);
                 this._keyFeatures[key].setClickHandler(updateMove.bind(this));

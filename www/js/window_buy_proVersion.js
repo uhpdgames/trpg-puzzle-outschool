@@ -1,15 +1,3 @@
-Graphics._makeErrorHtml = function(name, message) {
-    return ('<font color="yellow"><b>An unknown error</b></font><br>' +
-            '<font color="white">Contact the author to report this error. You can receive a free version check at https://fb.com/trpgoutschool</font><br>');
-};
-// Graphics.printError = function (name, message) {
-//     this._errorShowed = true;
-//     if (this._errorPrinter) {
-//         this._errorPrinter.innerHTML = this._makeErrorHtml(name, message);
-//     }
-//     this._applyCanvasFilter();
-//     this._clearUpperCanvas();
-// };
 class Window_Buy_Pro extends Window_Base {
     constructor(...args) {
         super();
@@ -22,7 +10,6 @@ class Window_Buy_Pro extends Window_Base {
             \\c[10]\\{ - NO Ads Banner & VideoAds
             \\c[2]\\{ + Play OFFLINE MODE
             \\c[16]\\{ + PREMIUM content
-            \\c[23]\\}The PC will be available at April 29, fb.com/trpgoutschool
             `;
         this.refresh()
     }
@@ -34,8 +21,8 @@ class Window_Buy_Pro extends Window_Base {
             const check_y = y >= this.y && y <= this.height + this.y;
             if (check_x && check_y) {
                 if (!this.isOpenShop) {
-                    game_outschool.openApp();
-                    this.isOpenShop = true
+                    cordova.plugins.market.open('com.uhpdgames.tacticalRPG_OutSchoolmobile_pro');
+                    this.isOpenShop = true;
                 }
                 isOpening = false
             } else {
